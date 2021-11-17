@@ -12,3 +12,4 @@ Foi utilizado para criar o projeto:
 - CSS3
 - JavaScript Vanilla
 
+Link para visualizar -> https://marcoscantarutti.github.io/jogo-da-memoria/
