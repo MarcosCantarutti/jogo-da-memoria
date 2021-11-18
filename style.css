@@ -167,8 +167,8 @@ h1 {
     width: 30rem;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
   }
 
   .cards-container {
