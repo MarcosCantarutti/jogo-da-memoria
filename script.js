@@ -3,8 +3,8 @@ const cards = document.querySelectorAll('.cards-container')
 let hasFlippedCard = false;
 let firstClickedCard, secondClickedCard
 let lockTheBoard = false
-
-
+let score = 0
+let error = 0
 
 // Virando as cartas
 function handleFlipCards () {
@@ -29,15 +29,29 @@ function handleFlipCards () {
     
 
 // Quando clicado, desativar os elementos para evitar virar novamente
- const disableClickedCards = () => {
-  firstClickedCard.removeEventListener('click', handleFlipCards);
-  secondClickedCard.removeEventListener('click', handleFlipCards);
+ function disableClickedCards (){
+    const isMatch = firstClickedCard.dataset.champion === secondClickedCard.dataset.champion 
+    
+
+
+    firstClickedCard.removeEventListener('click', handleFlipCards);
+    secondClickedCard.removeEventListener('click', handleFlipCards);
+    
+  
+   
+     if(isMatch){
+         score += 1
+     } 
+     document.getElementById('score-count').innerText = `Acertos: ${score}`
+  
+ 
 
   resetCardsBoard()
 }
 
 // Revertar o flip quando errar.
-const unflipClickedCards = () => {
+function unflipClickedCards (){
+
     lockTheBoard = true
 
 
@@ -48,6 +62,15 @@ const unflipClickedCards = () => {
     resetCardsBoard()
     lockTheBoard = false
   }, 1500);
+
+
+    // Error Count   
+  const isMatch = firstClickedCard.dataset.champion === secondClickedCard.dataset.champion
+  if(!isMatch){
+      error += 1
+  }
+  document.getElementById('error-count').innerText = `Erros: ${error}`
+
 }
 
 const resetCardsBoard = () => {
