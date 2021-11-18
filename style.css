@@ -130,7 +130,7 @@ h1 {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: rem;
+    gap: 1rem;
   }
 
   .cards-container {
@@ -144,5 +144,36 @@ h1 {
     width: 100%;
     height: 100%;
     padding: 0rem;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .container {
+    width: 40rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+  .cards-container {
+    width: 6rem;
+    height: 8rem;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    width: 30rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .cards-container {
+    width: 6rem;
+    height: 8rem;
+    margin: 0 auto;
   }
 }
